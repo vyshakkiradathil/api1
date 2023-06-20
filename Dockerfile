@@ -11,9 +11,9 @@ WORKDIR /usr/src/app
 # Install app dependencies
 COPY package*.json /usr/src/app/
 RUN npm install --global yarn
-RUN yarn add no-lockfile true
-RUN yarn install
+RUN --install.no-lockfile true
 COPY yarn.lock /usr/src/app/
+RUN yarn install
 
 
 # Bundle app source
